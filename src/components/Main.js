@@ -5,14 +5,7 @@ import PodcastContainer from './PodcastContainer';
 const Main = () => {
 
     // State for user search keywords:
-    const [ podcast, setPodcast ] = useState({
-    artist: '',
-    title: '',
-    image: '',
-    country: '',
-    genre: '',
-    link: ''
-    });
+    const [ podcast, setPodcast ] = useState([]);
 
     // State for API error
     const [ apiError, setApiError ] = useState(false);
@@ -27,15 +20,13 @@ const Main = () => {
         fetchData();
     }
 
+    // input change handler
     const handleChange = (e) => {
-        console.log(e.target.value);
-
         if (e.target.value === "") {
             setPodcast('')
         }
         setUserInput(e.target.value);
     }
-
 
 
     // API call logic
@@ -45,32 +36,20 @@ const Main = () => {
 
         url.search = new URLSearchParams({
             term: userInput,
-            country: podcast.country,
+            country: 'US',
             media: 'podcast',
-            limit: 10
+            limit: 10,
         })
 
         fetch(url)
         .then((result) => {
             return result.json();
-            // check ok param on API return, and add error handling here
         })
         .then((data) => {
-            console.log(data);
-            setPodcast({
-                ...podcast,
-                artist: data.results[0].artistname,
-                title: data.results[0].collectionName,
-                image: data.results[0].artworkUrl600,
-                country: data.results[0].country,
-                genre: data.results[0].primaryGenreName,
-                link: data.results[0].trackViewUrl
-            });
+            setPodcast( ...podcast, data.results );
             setApiError(false);
         })
     }
-    
-
 
     return (
         <main className='wrapper'>
@@ -80,10 +59,14 @@ const Main = () => {
             countrySelection={podcast.country} 
             genreSearch={podcast.genre}
             handleChange={handleChange} 
-            typedValue={userInput} 
-            formError={apiError}/>
+            typedValue={userInput} />
 
-            {/* <PodcastContainer /> */}
+            {/* If user clears the input, don't show any results on the page */}
+            {
+                podcast
+                    ? <PodcastContainer mainProps={podcast}  />
+                    : null
+            }
 
         </main>
     )

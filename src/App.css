@@ -11,13 +11,14 @@ html { box-sizing: border-box;}
 html {font-size: 125%;}
 
 body {
-  background-color: rgb(65, 144, 122);
+  background-color: #75c8ae;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .wrapper {
   width: 85%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 img {
@@ -33,6 +34,7 @@ p,
 ul {
   margin: 0;
   padding: 0;
+  color: #5a3d2b;
 }
 
 ul {
@@ -54,21 +56,19 @@ header {
   height: 10vh;
 }
 h1 {
-  background-color: tomato;
+  background-color: #e5771e;
   width: 40%;
   border-radius: 10px;
+  color: #5a3d2b;
 }
 
 
 /* MAIN STYLES */
 
 main {
-  /* change height later !!! */
-  height: 85vh;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
 }
 form {
@@ -83,24 +83,73 @@ select {
   width: 90%;
   margin: 5px;
   border: none;
-  background-color: black;
-  color: white;
+  background-color: #ffecb4;
+  color: #5a3d2b;
   border-radius: 5px;
 }
 button {
   width: 90%;
     margin: 5px;
     border: none;
-    background-color: tomato;
-    color: black;
+    background-color: #e5771e;
+    color: #5a3d2b;
     border-radius: 5px;
 }
 button:hover,
 button:focus {
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #ffecb4;
+  color: #ffecb4;
 }
 
+section.podcastSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  width: 100%;
+}
+
+ul.podcastResults {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+li.pods {
+  padding: 5px;
+  background-color: #f4a127;
+  border-radius: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+  margin: 5px;
+  min-width: 300px;
+}
+
+@media (max-width: 900px) {
+  li.pods {
+    flex-direction: column;
+  }
+}
+
+a.podsImg {
+  display: inline-block;
+  width: 45%;
+  margin-right: 5px;
+}
+
+.podsImage {
+  border-radius: 40px 0;
+  width: 200px;
+  height: 200px;
+}
+.podsInfo {
+  padding-left: 10px;
+}
 
 
 /* FOOTER STYLES */
