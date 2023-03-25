@@ -1,7 +1,7 @@
 import IndivPodcast from "./IndivPodcast";
 
 const PodcastContainer = (props) => {
-console.log(props.mainProps)
+// console.log(props.mainProps)
     return(
         <section className="podcastSection wrapper">
             <h2>Recommended podcasts:</h2>

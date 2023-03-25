@@ -28,7 +28,6 @@ const Main = () => {
         setUserInput(e.target.value);
     }
 
-
     // API call logic
     const fetchData = () => {
 
@@ -59,7 +58,8 @@ const Main = () => {
             countrySelection={podcast.country} 
             genreSearch={podcast.genre}
             handleChange={handleChange} 
-            typedValue={userInput} />
+            typedValue={userInput}
+            formError={apiError} />
 
             {/* If user clears the input, don't show any results on the page */}
             {
