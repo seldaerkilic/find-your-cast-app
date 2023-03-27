@@ -1,9 +1,10 @@
 
 
 const IndivPodcast = (props) => {
-
     return (
-            <li className="pods">
+            <li className="pods" 
+            // key={props.microProps.collectionId}
+            >
                 <a href={props.podUrl} className="podsImg">
                     <img src={props.microProps.artworkUrl600} alt={props.microProps.collectionName} className="podsImage" />
                 </a>

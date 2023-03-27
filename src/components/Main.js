@@ -13,6 +13,15 @@ const Main = () => {
     // listen for keyword search input
     const [ userInput, setUserInput ] = useState('');
 
+    // state for user selection on genre
+    const [userGenre, setUserGenre] = useState('Society & Culture');
+
+    const [userCountry, setUserCountry] = useState('US');
+
+    console.log(userCountry);
+    console.log(userGenre);
+    console.log(podcast);
+
     // Submit event handler
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,6 +37,16 @@ const Main = () => {
         setUserInput(e.target.value);
     }
 
+    // user selection setter for genre
+    const handleGenre = (e) => {
+        setUserGenre(e.target.value);
+    }
+
+    // user selection setter on country
+    const handleCountry = (e) => {
+        setUserCountry(e.target.value);
+    }
+
     // API call logic
     const fetchData = () => {
 
@@ -35,9 +54,10 @@ const Main = () => {
 
         url.search = new URLSearchParams({
             term: userInput,
-            country: 'US',
+            country: userCountry,
             media: 'podcast',
             limit: 10,
+            primaryGenreName: userGenre
         })
 
         fetch(url)
@@ -45,7 +65,7 @@ const Main = () => {
             return result.json();
         })
         .then((data) => {
-            setPodcast( ...podcast, data.results );
+            setPodcast(data.results);
             setApiError(false);
         })
     }
@@ -59,14 +79,16 @@ const Main = () => {
             genreSearch={podcast.genre}
             handleChange={handleChange} 
             typedValue={userInput}
-            formError={apiError} />
-
-            {/* If user clears the input, don't show any results on the page */}
+            formError={apiError}
+            handleGenre={handleGenre}
+            handleCountry={handleCountry} />
+            
             {
                 podcast
-                    ? <PodcastContainer mainProps={podcast}  />
+                    ? <PodcastContainer mainProps={podcast} />
                     : null
             }
+            
 
         </main>
     )

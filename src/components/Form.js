@@ -15,17 +15,18 @@ const Form = (props) => {
             />
 
             <label htmlFor="countrySelection"></label>
-            <select name="countrySelection" id="countrySelection">
-                <option disabled selected>Select country:</option>
+            <select name="countrySelection" id="countrySelection" onChange={props.handleCountry}>
+                {/* <option disabled >Select country:</option> */}
                 {countryCodes.map((codes) => {
                     return <option>{codes}</option>
                 })}
             </select>
 
             <label htmlFor="genre"></label>
-            <select name="genre" id="genre">
-                <option value="">{props.genreSearch}</option>
-                
+            <select name="genre" id="genre" onChange={props.handleGenre}>
+                {genreCodes.map((genre)=>{
+                    return <option>{genre}</option>
+                })}
             </select>
 
             <button>Search Podcast</button>
@@ -33,7 +34,29 @@ const Form = (props) => {
     )
 }
 
+const genreCodes = [
+    'Society & Culture',
+    'Comedy',
+    'True Crime',
+    'Spirituality',
+    'Relationships',
+    'Education',
+    'History',
+    'Politics',
+    'News',
+    'TV & Film',
+    'Business',
+    'Technology',
+    'Arts',
+    'Books',
+    'Careers',
+    'Personal Journals',
+    'Health & Fitness',
+    
+]
+
 const countryCodes = [
+'US',
 "AF", 
 "AX", 
 "AL", 
@@ -272,8 +295,7 @@ const countryCodes = [
 'UG', 
 'UA', 
 'AE', 
-'GB', 
-'US', 
+'GB',  
 'UM', 
 'UY', 
 'UZ', 
