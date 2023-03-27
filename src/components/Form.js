@@ -16,7 +16,7 @@ const Form = (props) => {
 
             <label htmlFor="countrySelection"></label>
             <select name="countrySelection" id="countrySelection">
-                <option disabled>Select country:</option>
+                <option disabled selected>Select country:</option>
                 {countryCodes.map((codes) => {
                     return <option>{codes}</option>
                 })}

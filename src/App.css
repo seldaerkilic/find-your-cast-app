@@ -16,7 +16,7 @@ body {
 }
 
 .wrapper {
-  width: 85%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -53,13 +53,15 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  /* height: 10vh; */
+  padding: 10px;
 }
 h1 {
   background-color: #e5771e;
-  width: 40%;
+  width: 60%;
   border-radius: 10px;
   color: #5a3d2b;
+  font-size: 2rem;
 }
 
 
@@ -125,15 +127,9 @@ li.pods {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 45%;
+  max-width: 45%;
   margin: 5px;
   min-width: 300px;
-}
-
-@media (max-width: 900px) {
-  li.pods {
-    flex-direction: column;
-  }
 }
 
 a.podsImg {
@@ -157,4 +153,65 @@ footer {
   height: 5vh;
   text-align: center;
   font-size: 0.8rem;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width:1050px){
+  ul{
+    justify-content: space-around;
+  }
+  .podsImage {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 900px) {
+  li.pods {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+}
+
+@media (max-width:690px){
+  ul{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  li.pods {
+    flex-direction: row;
+    min-width: 90%;
+  }
+  .podsImage{
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 600px){
+  form {
+    width: 100%;
+  }
+  h1{
+    font-size: 1.6rem;
+  }
+  h2{
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width:450px){
+  li.pods{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .podsImg{
+    padding-left: 10px;
+  }
 }
