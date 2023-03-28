@@ -25,7 +25,6 @@ const LeftPanel = () => {
             })
             .then((data) => {
                 setMyPodcast(data.results);
-                console.log(data.results);
             })
     }
 
