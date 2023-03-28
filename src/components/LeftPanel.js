@@ -6,7 +6,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const LeftPanel = () => {
 
-    const [myPodcast, setMyPodcast] = useState([{}]);
+    const [myPodcast, setMyPodcast] = useState([]);
 
     // API call only for my own podcast -- running my ads here :)
     const fetchData = () => {
@@ -24,6 +24,7 @@ const LeftPanel = () => {
             })
             .then((data) => {
                 setMyPodcast(data.results);
+                console.log(data.results);
             })
     }
 
