@@ -14,8 +14,9 @@ const LeftPanel = () => {
 
         url.search = new URLSearchParams({
             term: 'Oo Kanada',
+            country: 'US',
             media: 'podcast',
-            limit: 1,
+            limit: 1
         })
 
         fetch(url)
