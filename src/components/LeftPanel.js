@@ -13,7 +13,7 @@ const LeftPanel = () => {
         const url = new URL('https://itunes.apple.com/search?');
 
         url.search = new URLSearchParams({
-            term: 'Oo Kanada',
+            term: 'Kanada',
             media: 'podcast',
             limit: 1,
         })
