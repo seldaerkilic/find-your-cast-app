@@ -5,31 +5,42 @@ const Form = (props) => {
     return(
         <form onSubmit={props.handleSubmit}>
 
+            <legend>So... You love podcasts and you want to discover more? Great! Here is the #1 app to get some recommendations. Enter your keyword, and click on Search Podcast button! You may select country or genre to help with the search results. Enjoy!</legend>
 
             <label htmlFor="userKeyword"></label>
             <input type="text" 
             id="userKeyword" 
             placeholder="Keyword" 
             onChange={props.handleChange} 
+            aria-describedby="error" 
             value={props.typedValue} required
             />
 
             <label htmlFor="countrySelection"></label>
             <select name="countrySelection" id="countrySelection" onChange={props.handleCountry}>
-                {/* <option disabled >Select country:</option> */}
                 {countryCodes.map((codes) => {
-                    return <option>{codes}</option>
+                    return <option key={codes}>{codes}</option>
                 })}
             </select>
 
             <label htmlFor="genre"></label>
             <select name="genre" id="genre" onChange={props.handleGenre}>
                 {genreCodes.map((genre)=>{
-                    return <option>{genre}</option>
+                    return <option key={genre}>{genre}</option>
                 })}
             </select>
 
             <button>Search Podcast</button>
+
+            {
+                props.formError
+                    ? <h2 className="error">
+                        This search is not valid. Please try again!
+                    </h2>
+                    : null
+            }
+
+
         </form>
     )
 }
@@ -57,6 +68,7 @@ const genreCodes = [
 
 const countryCodes = [
 'US',
+'CA',
 "AF", 
 "AX", 
 "AL", 
@@ -96,7 +108,6 @@ const countryCodes = [
 'BI', 
 'KH', 
 'CM', 
-'CA', 
 'CV', 
 'KY', 
 'CF', 

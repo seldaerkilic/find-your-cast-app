@@ -1,9 +1,9 @@
 import IndivPodcast from "./IndivPodcast";
 
 const PodcastContainer = (props) => {
+
     return(
         <section className="podcastSection wrapper">
-            <h2>Recommended podcasts:</h2>
             <ul className="podcastResults">
                 {props.mainProps.map((indivPods) => {
                     return (

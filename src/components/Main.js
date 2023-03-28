@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import Form from './Form';
 import PodcastContainer from './PodcastContainer';
+import LeftPanel from './LeftPanel';
+
+
 
 const Main = () => {
 
@@ -16,16 +19,12 @@ const Main = () => {
     // state for user selection on genre
     const [userGenre, setUserGenre] = useState('Society & Culture');
 
+    // state for country selection
     const [userCountry, setUserCountry] = useState('US');
-
-    console.log(userCountry);
-    console.log(userGenre);
-    console.log(podcast);
 
     // Submit event handler
     const handleSubmit = (e) => {
         e.preventDefault();
-
         fetchData();
     }
 
@@ -62,16 +61,26 @@ const Main = () => {
 
         fetch(url)
         .then((result) => {
-            return result.json();
+            if (result.ok) {
+                return result.json();
+            } else {
+                throw new Error(result);
+            }
         })
         .then((data) => {
             setPodcast(data.results);
             setApiError(false);
         })
+        .catch((error)=>{
+            setApiError(true);
+            setPodcast('');
+        })
+
     }
 
     return (
         <main className='wrapper'>
+            <LeftPanel />
 
             <Form 
             handleSubmit={handleSubmit} 
@@ -84,11 +93,16 @@ const Main = () => {
             handleCountry={handleCountry} />
             
             {
+                (!podcast[0])
+                    ? <h2>No podcasts available. Search a valid keyword!</h2>
+                    : <h2>Recommended podcasts:</h2>
+            }
+
+            {
                 podcast
                     ? <PodcastContainer mainProps={podcast} />
                     : null
             }
-            
 
         </main>
     )
