@@ -8,10 +8,10 @@ const IndivPodcast = (props) => {
                     <img src={props.microProps.artworkUrl600} alt={props.microProps.collectionName} className="podsImage" />
                 </a>
                 <div className="podsInfo">
-                    <p>Title: {props.title}</p>
-                    <p>Artist: {props.artistName}</p>
-                    <p>Primary genre: {props.genre}</p>
-                <p><a href={props.podUrl}>Click to listen on Apple Podcast</a></p>
+                    <p className="podsPara">Title: {props.title}</p>
+                    <p className="podsPara">Artist: {props.artistName}</p>
+                    <p className="podsPara">Primary genre: {props.genre}</p>
+                    <p className="podsPara"><a href={props.podUrl}>Click to listen on Apple Podcast</a></p>
                 </div>
             </li>
     )

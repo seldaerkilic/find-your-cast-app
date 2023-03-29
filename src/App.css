@@ -152,6 +152,9 @@ a.podsImg {
 .podsInfo {
   padding-left: 10px;
 }
+.podsPara{
+  max-width: 270px;
+}
 h2{
   font-size: 1.2rem;
   margin: 20px 0;
@@ -165,7 +168,7 @@ aside {
   color:#75c8ae;
   position: absolute;
   left: -50px;
-  top: -750px;
+  transform: translateY(-80%);
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -178,7 +181,7 @@ aside {
   color: #75c8ae;
   position: absolute;
   left: -50px;
-  top: -150px;
+  transform: translateY(11%);
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -194,7 +197,8 @@ p.panelInfo{
   margin: 5px 0;
 }
 div.myPodcast{
-  width: 60%;
+  width: 240px;
+  height: 310px;
   margin: 5px 0;
   padding: 10px;
   background-color: #e5771e;
@@ -247,6 +251,12 @@ footer {
     align-items: center;
     width: 50%;
   }
+  aside{
+    transform: translateY(-82%);
+  }
+  .open{
+    transform: translateY(9%);
+  }
 }
 
 @media (max-width:690px){
@@ -263,12 +273,12 @@ footer {
     width: 170px;
     height: 170px;
   }
-  aside {
-    top: -800px;
-  }
-  .open{
-    top: -200px;
-  }
+    aside {
+      transform: translateY(-90%);
+    }
+    .open {
+      transform: translateY(1%);
+    }
 }
 
 @media (max-width: 600px){
@@ -282,21 +292,29 @@ footer {
     font-size: 1.2rem;
   }
   aside {
-    top: -750px;
+    transform: translateY(-78%);
   }
-
   .open {
-    top: -150px;
+    transform: translateY(12%);
   }
 }
 
-@media (max-width: 555px){
+@media (max-width: 570px){
+aside {
+    transform: translateY(-80%);
+  }
+  .open {
+    transform: translateY(11%);
+  }
+}
+@media (max-width: 557px) {
   aside {
-      top: -790px;
-    }
-    .open {
-      top: -190px;
-    }
+    transform: translateY(-85%);
+  }
+
+  .open {
+    transform: translateY(6%);
+  }
 }
 
 @media (max-width:450px){
@@ -310,12 +328,21 @@ footer {
   }
 }
 
-@media (max-width: 370px){
+@media (max-width: 385px){
+aside {
+    transform: translateY(-90%);
+  }
+  .open {
+    transform: translateY(3%);
+  }
+}
+
+@media (max-width: 370px) {
   aside {
-      top: -820px;
-    }
-  
-    .open {
-      top: -210px;
-    }
+    transform: translateY(-93%);
+  }
+
+  .open {
+    transform: translateY(-1%);
+  }
 }
