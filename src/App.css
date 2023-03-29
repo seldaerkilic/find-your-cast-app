@@ -165,7 +165,7 @@ aside {
   color:#75c8ae;
   position: absolute;
   left: -50px;
-  top: -970px;
+  top: -750px;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -210,12 +210,12 @@ img.myPodsImage {
   border-radius: 10px 0;
 }
 .arrowIcon {
-margin-top: 50px;
+margin-top: 30px;
   right: 10px;
 transform: rotate(90deg);
 }
 .reverse {
-margin-top: 50px;
+margin-top: 30px;
   right: 10px;
   transform: rotate(-90deg);
 }
@@ -264,7 +264,7 @@ footer {
     height: 170px;
   }
   aside {
-    top: -1010px;
+    top: -800px;
   }
   .open{
     top: -200px;
@@ -282,7 +282,7 @@ footer {
     font-size: 1.2rem;
   }
   aside {
-    top: -970px;
+    top: -750px;
   }
 
   .open {
@@ -292,7 +292,7 @@ footer {
 
 @media (max-width: 555px){
   aside {
-      top: -1000px;
+      top: -790px;
     }
     .open {
       top: -190px;
@@ -312,7 +312,7 @@ footer {
 
 @media (max-width: 370px){
   aside {
-      top: -1040px;
+      top: -820px;
     }
   
     .open {

@@ -7,7 +7,7 @@ const Form = (props) => {
 
             <legend>So... You love podcasts and you want to discover more? Great! Here is the #1 app to get some recommendations. Enter your keyword, and click on Search Podcast button! You may select country or genre to help with the search results. Enjoy!</legend>
 
-            <label htmlFor="userKeyword"></label>
+            <label htmlFor="userKeyword" className="sr-only">Enter a keyword</label>
             <input type="text" 
             id="userKeyword" 
             placeholder="Keyword" 
@@ -16,14 +16,14 @@ const Form = (props) => {
             value={props.typedValue} required
             />
 
-            <label htmlFor="countrySelection"></label>
+            <label htmlFor="countrySelection" className="sr-only">Select a country</label>
             <select name="countrySelection" id="countrySelection" onChange={props.handleCountry}>
                 {countryCodes.map((codes) => {
                     return <option key={codes}>{codes}</option>
                 })}
             </select>
 
-            <label htmlFor="genre"></label>
+            <label htmlFor="genre" className="sr-only">Select a genre</label>
             <select name="genre" id="genre" onChange={props.handleGenre}>
                 {genreCodes.map((genre)=>{
                     return <option key={genre}>{genre}</option>
