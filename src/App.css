@@ -252,7 +252,7 @@ footer {
     width: 50%;
   }
   aside{
-    top: -950px;
+    top: -960px;
   }
   .open{
     top: -150px;
@@ -274,7 +274,7 @@ footer {
     height: 170px;
   }
     aside {
-      top: -1000px;
+      top: -1010px;
     }
   
     .open {
@@ -293,7 +293,7 @@ footer {
     font-size: 1.2rem;
   }
   aside {
-    top: -950px;
+    top: -960px;
   }
 
   .open {
@@ -303,7 +303,7 @@ footer {
 
 @media (max-width: 557px) {
   aside {
-      top: -990px;
+      top: -1000px;
     }
   
     .open {
@@ -324,7 +324,7 @@ footer {
 
 @media (max-width: 370px) {
   aside {
-      top: -1020px;
+      top: -1030px;
     }
   
     .open {
