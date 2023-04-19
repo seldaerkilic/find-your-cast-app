@@ -560,13 +560,6 @@ footer {
 }
 
 @media (max-width: 557px) {
-    /* aside {
-    transform: translateY(-85%);
-  } */
-
-    /* .open {
-    transform: translateY(6%);
-  } */
     div.myPodcast {
         width: 240px;
         height: 310px;
@@ -592,23 +585,4 @@ footer {
     .podsImg {
         padding-left: 10px;
     }
-}
-
-@media (max-width: 385px) {
-    /* aside {
-    transform: translateY(-90%);
-  } */
-    /* .open {
-    transform: translateY(3%);
-  } */
-}
-
-@media (max-width: 370px) {
-    /* aside {
-    transform: translateY(-93%);
-  } */
-
-    /* .open {
-    transform: translateY(-1%);
-  } */
 }
