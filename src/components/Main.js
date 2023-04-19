@@ -80,7 +80,6 @@ const Main = () => {
 
     return (
         <main className='wrapper'>
-            <LeftPanel />
 
             <Form 
             handleSubmit={handleSubmit} 
