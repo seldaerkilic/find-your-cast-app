@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import Form from './Form';
 import PodcastContainer from './PodcastContainer';
-import LeftPanel from './LeftPanel';
-
 
 
 const Main = () => {
