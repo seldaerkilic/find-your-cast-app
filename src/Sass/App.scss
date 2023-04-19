@@ -17,7 +17,7 @@ section {
     display: block
 }
 
-h1 {
+header h1 {
     font-size: 2em;
     margin: .67em 0
 }
@@ -476,14 +476,12 @@ div.myPodcast {
     }
 }
 
-
 /* FOOTER STYLES */
 footer {
     height: 5vh;
     text-align: center;
     font-size: 0.8rem;
 }
-
 
 /* MEDIA QUERIES */
 
@@ -508,7 +506,7 @@ footer {
 }
 
 @media (max-width: 800px){
-    h1,
+    header h1,
     aside {
         width: 90%;
     }
@@ -534,7 +532,7 @@ footer {
     form {
         width: 100%;
     }
-    h1 {
+    header h1 {
         font-size: 1.6rem;
     }
     h2 {
@@ -547,6 +545,9 @@ footer {
     h3{
         font-size: 0.8rem;
     }
+}
+main form {
+    width: 90%;
 }
 }
 
@@ -564,6 +565,7 @@ footer {
         justify-content: center;
         align-items: center;
     }
+    
 }
 
 @media (max-width:450px) {
@@ -571,9 +573,6 @@ footer {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-    }
-    h1{
-        font-size: 1.3rem;
     }
     .podsImg {
         padding-left: 10px;
@@ -584,4 +583,7 @@ footer {
             max-width: 70%;
         }
     }
+        header h1 {
+            font-size: 1.3rem;
+        }
 }
