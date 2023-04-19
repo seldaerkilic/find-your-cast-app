@@ -306,15 +306,14 @@ header {
     justify-content: center;
     align-items: center;
     padding: 10px;
-}
-
-h1 {
-    background-color: #e5771e;
-    width: 60%;
-    border-radius: 10px;
-    color: #5a3d2b;
-    font-size: 2rem;
-    margin-top: 80px;
+    h1 {
+        background-color: #e5771e;
+        width: 60%;
+        border-radius: 10px;
+        color: #5a3d2b;
+        font-size: 2rem;
+        margin-top: 80px;
+    }
 }
 
 
@@ -325,46 +324,40 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* position: relative; */
-}
-
-form {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-legend {
-    text-align: center;
-    color: #5a3d2b;
-    margin: 10px 0;
-}
-
-input,
-select {
-    width: 90%;
-    margin: 5px;
-    border: none;
-    background-color: #ffecb4;
-    color: #5a3d2b;
-    border-radius: 5px;
-}
-
-button {
-    width: 90%;
-    margin: 5px;
-    border: none;
-    background-color: #e5771e;
-    color: #5a3d2b;
-    border-radius: 5px;
-}
-
-button:hover,
-button:focus {
-    border: 2px solid #ffecb4;
-    color: #ffecb4;
+    form {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        legend {
+            text-align: center;
+            color: #5a3d2b;
+            margin: 10px 0;
+        }
+        input,
+        select {
+            width: 90%;
+            margin: 5px;
+            border: none;
+            background-color: #ffecb4;
+            color: #5a3d2b;
+            border-radius: 5px;
+        }
+        button {
+            width: 90%;
+            margin: 5px;
+            border: none;
+            background-color: #e5771e;
+            color: #5a3d2b;
+            border-radius: 5px;
+        }
+        button:hover,
+        button:focus {
+            border: 2px solid #ffecb4;
+            color: #ffecb4;
+        }
+    }
 }
 
 section.podcastSection {
@@ -394,26 +387,24 @@ li.pods {
     max-width: 45%;
     margin: 5px;
     min-width: 300px;
-}
-
-a.podsImg {
-    display: inline-block;
-    width: 45%;
-    margin-right: 5px;
-}
-
-.podsImage {
-    border-radius: 40px 0;
-    width: 200px;
-    height: 200px;
-}
-
-.podsInfo {
-    padding-left: 10px;
-}
-
-.podsPara {
-    max-width: 270px;
+    a.podsImg {
+        display: inline-block;
+        width: 45%;
+        margin-right: 5px;
+    }
+    
+    .podsImage {
+        border-radius: 40px 0;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .podsInfo {
+        padding-left: 10px;
+        .podsPara {
+            max-width: 270px;
+        }
+    }
 }
 
 h2 {
@@ -448,21 +439,26 @@ aside {
     align-items: center;
     width: 70%;
     height: 60px;
-}
-
-h3 {
-    color: #75c8ae;
+    h3 {
+        color: #75c8ae;
+    }
+    .arrowIcon {
+        transform: rotate(90deg);
+    }
+    .reverse {
+        transform: rotate(-90deg);
+    }
 }
 
 .panelInfo {
     margin: 15px 0;
+    p {
+        color: #75c8ae;
+        padding: 0 50px;
+        margin: 5px 0;
+    }
 }
 
-.panelInfo p {
-    color: #75c8ae;
-    padding: 0 50px;
-    margin: 5px 0;
-}
 
 div.myPodcast {
     padding: 5px;
@@ -474,20 +470,12 @@ div.myPodcast {
     max-width: 70%;
     margin: 5px;
     min-width: 300px;
+    img.myPodsImage {
+        width: 40%;
+        border-radius: 30px 0;
+    }
 }
 
-img.myPodsImage {
-    width: 40%;
-    border-radius: 30px 0;
-}
-
-.arrowIcon {
-    transform: rotate(90deg);
-}
-
-.reverse {
-    transform: rotate(-90deg);
-}
 
 /* FOOTER STYLES */
 footer {
@@ -519,18 +507,23 @@ footer {
     }
 }
 
+@media (max-width: 800px){
+    h1,
+    aside {
+        width: 90%;
+    }
+}
+
 @media (max-width:690px) {
     ul {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        li.pods {
+            flex-direction: row;
+            min-width: 90%;
+        }
     }
-
-    li.pods {
-        flex-direction: row;
-        min-width: 90%;
-    }
-
     .podsImage {
         width: 170px;
         height: 170px;
@@ -541,11 +534,9 @@ footer {
     form {
         width: 100%;
     }
-
     h1 {
         font-size: 1.6rem;
     }
-
     h2 {
         font-size: 1.2rem;
     }
@@ -581,8 +572,16 @@ footer {
         justify-content: flex-start;
         align-items: flex-start;
     }
-
+    h1{
+        font-size: 1.3rem;
+    }
     .podsImg {
         padding-left: 10px;
+    }
+    .myPodcast{
+        max-width: 70%;
+        .myPodsImage{
+            max-width: 70%;
+        }
     }
 }
