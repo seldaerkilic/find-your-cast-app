@@ -1,4 +1,5 @@
-import './App.css';
+import './Sass/App.scss';
+import LeftPanel from './components/LeftPanel';
 import Main from './components/Main';
 
 
@@ -8,6 +9,7 @@ function App() {
       <header className='wrapper'>
       <h1>FIND YOUR CAST</h1>
       </header>
+      <LeftPanel />
 
       <Main />
 
