@@ -17,7 +17,7 @@ section {
   display: block;
 }
 
-h1 {
+header h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
@@ -302,8 +302,7 @@ header {
   align-items: center;
   padding: 10px;
 }
-
-h1 {
+header h1 {
   background-color: #e5771e;
   width: 60%;
   border-radius: 10px;
@@ -318,25 +317,21 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
 }
-
-form {
+main form {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-legend {
+main form legend {
   text-align: center;
   color: #5a3d2b;
   margin: 10px 0;
 }
-
-input,
-select {
+main form input,
+main form select {
   width: 90%;
   margin: 5px;
   border: none;
@@ -344,8 +339,7 @@ select {
   color: #5a3d2b;
   border-radius: 5px;
 }
-
-button {
+main form button {
   width: 90%;
   margin: 5px;
   border: none;
@@ -353,9 +347,8 @@ button {
   color: #5a3d2b;
   border-radius: 5px;
 }
-
-button:hover,
-button:focus {
+main form button:hover,
+main form button:focus {
   border: 2px solid #ffecb4;
   color: #ffecb4;
 }
@@ -388,24 +381,15 @@ li.pods {
   margin: 5px;
   min-width: 300px;
 }
-
-a.podsImg {
-  display: inline-block;
-  width: 45%;
-  margin-right: 5px;
-}
-
-.podsImage {
+li.pods .podsImage {
   border-radius: 40px 0;
   width: 200px;
   height: 200px;
 }
-
-.podsInfo {
+li.pods .podsInfo {
   padding-left: 10px;
 }
-
-.podsPara {
+li.pods .podsInfo .podsPara {
   max-width: 270px;
 }
 
@@ -439,15 +423,19 @@ aside {
   width: 70%;
   height: 60px;
 }
-
-h3 {
+.sideHeading h3 {
   color: #75c8ae;
+}
+.sideHeading .arrowIcon {
+  transform: rotate(90deg);
+}
+.sideHeading .reverse {
+  transform: rotate(-90deg);
 }
 
 .panelInfo {
   margin: 15px 0;
 }
-
 .panelInfo p {
   color: #75c8ae;
   padding: 0 50px;
@@ -465,18 +453,9 @@ div.myPodcast {
   margin: 5px;
   min-width: 300px;
 }
-
-img.myPodsImage {
+div.myPodcast img.myPodsImage {
   width: 40%;
   border-radius: 30px 0;
-}
-
-.arrowIcon {
-  transform: rotate(90deg);
-}
-
-.reverse {
-  transform: rotate(-90deg);
 }
 
 /* FOOTER STYLES */
@@ -498,10 +477,16 @@ footer {
 }
 @media (max-width: 900px) {
   li.pods {
-    flex-direction: column;
+    margin: 10px auto;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    max-width: 90%;
+  }
+}
+@media (max-width: 800px) {
+  header h1,
+  aside {
+    width: 90%;
   }
 }
 @media (max-width: 690px) {
@@ -510,8 +495,7 @@ footer {
     justify-content: center;
     align-items: center;
   }
-  li.pods {
-    flex-direction: row;
+  ul li.pods {
     min-width: 90%;
   }
   .podsImage {
@@ -523,7 +507,7 @@ footer {
   form {
     width: 100%;
   }
-  h1 {
+  header h1 {
     font-size: 1.6rem;
   }
   h2 {
@@ -534,14 +518,11 @@ footer {
   .sideHeading h3 {
     font-size: 0.8rem;
   }
+  main form {
+    width: 90%;
+  }
 }
 @media (max-width: 557px) {
-  /* aside {
-    transform: translateY(-85%);
-  } */
-  /* .open {
-    transform: translateY(6%);
-  } */
   div.myPodcast {
     width: 240px;
     height: 310px;
@@ -555,30 +536,27 @@ footer {
     justify-content: center;
     align-items: center;
   }
+  li.pods .podsImg .podsImage {
+    width: 150px;
+    height: 150px;
+  }
 }
 @media (max-width: 450px) {
   li.pods {
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
   }
-  .podsImg {
+  li.pods .podsImg {
     padding-left: 10px;
   }
-}
-@media (max-width: 385px) {
-  /* aside {
-    transform: translateY(-90%);
-  } */
-  /* .open {
-    transform: translateY(3%);
-  } */
-}
-@media (max-width: 370px) {
-  /* aside {
-    transform: translateY(-93%);
-  } */
-  /* .open {
-    transform: translateY(-1%);
-  } */
+  .myPodcast {
+    max-width: 70%;
+  }
+  .myPodcast .myPodsImage {
+    max-width: 70%;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
 }

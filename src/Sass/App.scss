@@ -387,11 +387,6 @@ li.pods {
     max-width: 45%;
     margin: 5px;
     min-width: 300px;
-    a.podsImg {
-        display: inline-block;
-        width: 45%;
-        margin-right: 5px;
-    }
     
     .podsImage {
         border-radius: 40px 0;
@@ -498,10 +493,10 @@ footer {
 
 @media (max-width: 900px) {
     li.pods {
-        flex-direction: column;
+        margin: 10px auto;
         justify-content: center;
         align-items: center;
-        width: 50%;
+        max-width: 90%;
     }
 }
 
@@ -518,7 +513,6 @@ footer {
         justify-content: center;
         align-items: center;
         li.pods {
-            flex-direction: row;
             min-width: 90%;
         }
     }
@@ -565,17 +559,22 @@ main form {
         justify-content: center;
         align-items: center;
     }
-    
+    li.pods .podsImg{
+        .podsImage{
+            width: 150px;
+            height: 150px;
+        }
+    }
 }
 
 @media (max-width:450px) {
     li.pods {
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-    .podsImg {
-        padding-left: 10px;
+        justify-content: center;
+        align-items: center;
+        .podsImg {
+            padding-left: 10px;
+        }
     }
     .myPodcast{
         max-width: 70%;
